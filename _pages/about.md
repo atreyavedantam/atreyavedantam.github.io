@@ -7,9 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-
-# About Me
-
 Hello there! I am Atreya Vedantam, a fourth year undergraduate student (in a five year dual degree program) in the Department of Electrical Engineering at IIT Madras. I am interested in theoretical machine learning, optimization, and its intersection with probability theory and stochastic systems. My current research interests broadly are:
 
 - Understanding generalization in Machine Learning models: under what restrictions on the data distribution, optimization method or model architecture can we guarantee generalization? How does generalization as a function of these quantities vary as?

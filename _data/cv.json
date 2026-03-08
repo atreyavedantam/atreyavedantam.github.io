@@ -1,22 +1,22 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Atreya Vedantam",
+    "email": "ee22b004@smail.iitm.ac.in",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://atreyavedantam.github.io",
+    "summary": "Undergraduate student at Indian Institute of Technology Madras.",
     "location": {
       "address": "",
       "postalCode": "",
       "city": "Earth",
-      "countryCode": "US",
+      "countryCode": "India",
       "region": ""
     },
     "profiles": [
       {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?view_op=list_works&hl=en&user=JCla9gLlX-MC"
       },
       {
         "network": "ORCID",
@@ -26,39 +26,30 @@
       {
         "network": "GitHub",
         "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "url": "https://github.com/atreyavedantam"
       }
     ]
   },
   "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
+      "institution": "Indian Institute of Technology Madras",
+      "area": "Undergraduate in the Dept. of Electrical Engineering",
       "studyType": "",
       "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
+      "endDate": "2027",
+      "gpa": "9.66",
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
+      "institution": "Chettinad Vidyashram",
+      "area": "High School",
       "studyType": "",
       "startDate": "",
       "endDate": "2014",
-      "gpa": null,
+      "gpa": "490/500",
       "courses": []
     },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
-      "courses": []
-    }
   ],
   "skills": [],
   "languages": [],
@@ -66,11 +57,11 @@
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
+      "name": "Characterization of Blind Code Rate Recovery in Linear Block Codes",
+      "publisher": "Submitted to ISIT 2026",
+      "releaseDate": "2026-01-16",
       "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "summary": "This paper is nice."
     },
     {
       "name": "Paper Title Number 2",

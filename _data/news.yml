@@ -1,0 +1,24 @@
+# =====================================================================
+#  NEWS — newest first. Add a new item at the TOP.
+#
+#  date: free text shown on the left, e.g. "Sep 2026"
+#  text: one line; Markdown works: **bold**, *italics*, [link](https://...)
+#
+#  The first `news_visible` items (set in _config.yml) are always shown;
+#  older ones are tucked behind a "Show older news" toggle.
+# =====================================================================
+
+- date: "May 2026"
+  text: "Started at **USC** as an **IUSSTF–Viterbi Scholar**, working with [Prof. Vatsal Sharan](https://vatsalsharan.github.io/) on feature learning and memory–sample trade-offs."
+
+- date: "2026"
+  text: "Serving as a reviewer for **NeurIPS 2026**."
+
+- date: "Mar 2026"
+  text: "[Characterization of Blind Code Rate Recovery in Linear Block Codes](https://arxiv.org/abs/2603.02031) is on arXiv and was accepted at **IEEE ISIT 2026** (Guangzhou, China)."
+
+- date: "Feb 2026"
+  text: "New preprint: [Grokking in Linear Models for Logistic Regression](https://arxiv.org/abs/2602.08302) — grokking without depth or representation learning."
+
+- date: "May 2025"
+  text: "Joined **Dynamic Technology Lab**, Singapore, as a quantitative research intern for the summer."

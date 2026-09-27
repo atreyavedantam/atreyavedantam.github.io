@@ -1,0 +1,42 @@
+# =====================================================================
+#  PUBLICATIONS — newest first. Copy a block to add a paper.
+#
+#  title:    paper title
+#  authors:  list of names, in order. Your own name is bolded
+#            automatically (it must match `name:` in _config.yml).
+#            Add "*" after a name for equal contribution, e.g. "Jane Doe*".
+#  venue:    full venue text shown in italics
+#  tag:      short label shown as a small badge (e.g. "ISIT 2026").
+#            Leave empty ("") for no badge.
+#  links:    any of arxiv / pdf / code / slides / poster / video / bibtex /
+#            project. Delete lines you don't need. Use full URLs, or paths
+#            like "/files/paper.pdf" for files you put in /files/.
+#  note:     optional one-line remark (e.g. "Oral presentation").
+#  section:  "papers" (published / accepted) or "preprints"
+#            (preprints, under review, in preparation).
+# =====================================================================
+
+- title: "Characterization of Blind Code Rate Recovery in Linear Block Codes"
+  authors: ["Atreya Vedantam", "Radha Krishna Ganti"]
+  venue: "IEEE International Symposium on Information Theory (ISIT), 2026"
+  tag: "ISIT 2026"
+  section: "papers"
+  links:
+    arxiv: "https://arxiv.org/abs/2603.02031"
+    pdf: "https://arxiv.org/pdf/2603.02031"
+
+- title: "Grokking in Linear Models for Logistic Regression"
+  authors: ["Nataraj Das", "Atreya Vedantam", "Chandrashekar Lakshminarayanan"]
+  venue: "arXiv preprint arXiv:2602.08302, 2026"
+  tag: "Preprint"
+  section: "preprints"
+  links:
+    arxiv: "https://arxiv.org/abs/2602.08302"
+    pdf: "https://arxiv.org/pdf/2602.08302"
+
+- title: "Intervention for Entanglement Routing in a Homogeneous Quantum Repeater Chain with Distillation"
+  authors: ["Atreya Vedantam", "Krishna Jagannathan"]
+  venue: "In preparation"
+  tag: ""
+  section: "preprints"
+  links: {}

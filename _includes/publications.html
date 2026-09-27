@@ -1,0 +1,57 @@
+{%- comment -%}
+  Publications. Content lives in _data/publications.yml.
+  Papers are split into two groups by their `section:` field.
+{%- endcomment -%}
+<section id="publications" class="section">
+  <h2 class="section__title">Publications</h2>
+  <p class="section__note">
+    See also my <a href="{{ site.scholar }}">Google Scholar</a> profile.
+  </p>
+
+  {%- assign groups = "papers|Papers,preprints|Preprints &amp; in preparation" | split: "," -%}
+  {% for g in groups %}
+    {%- assign key = g | split: "|" | first -%}
+    {%- assign label = g | split: "|" | last -%}
+    {%- assign pubs = site.data.publications | where: "section", key -%}
+    {% if pubs.size > 0 %}
+    <h3 class="subhead">{{ label }}</h3>
+    <ol class="pubs">
+      {% for p in pubs %}
+      <li class="pub">
+        <div class="pub__title">{{ p.title }}</div>
+        <div class="pub__authors">
+          {%- for a in p.authors -%}
+            {%- assign clean = a | remove: "*" -%}
+            {%- if clean == site.name -%}<span class="me">{{ a }}</span>{%- else -%}{{ a }}{%- endif -%}
+            {%- unless forloop.last -%}{%- if forloop.rindex == 2 -%}{% if p.authors.size > 2 %},{% endif %} and {% else %}, {% endif -%}{%- endunless -%}
+          {%- endfor -%}
+        </div>
+        <div class="pub__venue">
+          {% if p.tag and p.tag != "" %}<span class="tag">{{ p.tag }}</span>{% endif %}
+          <em>{{ p.venue }}</em>
+          {% if p.note and p.note != "" %}<span class="pub__note">· {{ p.note }}</span>{% endif %}
+        </div>
+        {% if p.links and p.links.size > 0 %}
+        <div class="pub__links">
+          {% for l in p.links %}
+            {%- assign href = l[1] -%}
+            {%- if href and href != "" -%}
+              {%- assign first = href | slice: 0 -%}
+              {%- if first == "/" -%}{%- assign href = href | relative_url -%}{%- endif -%}
+              {%- case l[0] -%}
+                {%- when "arxiv" -%}{%- assign label = "arXiv" -%}
+                {%- when "pdf" -%}{%- assign label = "PDF" -%}
+                {%- when "bibtex" -%}{%- assign label = "BibTeX" -%}
+                {%- else -%}{%- assign label = l[0] | capitalize -%}
+              {%- endcase -%}
+              <a href="{{ href }}">{{ label }}</a>
+            {%- endif -%}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  {% endfor %}
+</section>

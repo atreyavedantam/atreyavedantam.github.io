@@ -1,31 +1,71 @@
----
-layout: compress
----
-
-{% include base_path %}
-
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
-
-  <body>
-
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="author" content="{{ site.name }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  {% if site.photo and site.photo != "" %}<meta property="og:image" content="{{ site.photo | absolute_url }}">{% endif %}
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>
+    /* Apply the saved light/dark choice before paint (avoids a flash). */
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <nav class="topnav" aria-label="Sections">
+    <div class="wrap topnav__inner">
+      <a class="topnav__name" href="{{ '/' | relative_url }}">{{ site.name }}</a>
+      <div class="topnav__links">
+        {% for item in site.nav %}<a href="{{ item.url }}">{{ item.title }}</a>{% endfor %}
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="when-light">{% include icon.html name="moon" %}</span>
+        <span class="when-dark">{% include icon.html name="sun" %}</span>
+      </button>
     </div>
+  </nav>
 
-    {% include scripts.html %}
+  <main class="wrap">
+    {% include header.html %}
 
-  </body>
+    <section id="about" class="section prose">
+      {{ content }}
+    </section>
+
+    {% include news.html %}
+    {% include publications.html %}
+    {% include research.html %}
+    {% include more.html %}
+  </main>
+
+  <footer class="wrap footer">
+    <span>&copy; {{ site.time | date: "%Y" }} {{ site.name }}</span>
+    <span>Last updated {{ site.time | date: "%B %Y" }}</span>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      document.querySelector('.theme-toggle').addEventListener('click', function () {
+        var current = root.getAttribute('data-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    })();
+  </script>
+</body>
 </html>

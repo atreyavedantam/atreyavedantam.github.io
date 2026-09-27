@@ -1,0 +1,51 @@
+# =====================================================================
+#  RESEARCH EXPERIENCE — current projects first.
+#
+#  title:   project name (bold)
+#  dates:   shown on the right, e.g. "May 2026 – present"
+#  where:   institution / program (Markdown links allowed)
+#  with:    advisors / collaborators (Markdown links allowed)
+#  summary: one or two sentences (Markdown allowed)
+# =====================================================================
+
+- title: "Feature learning under spectral optimizers"
+  dates: "May 2026 – present"
+  where: "University of Southern California · IUSSTF–Viterbi Scholar"
+  with: "[Prof. Vatsal Sharan](https://vatsalsharan.github.io/)"
+  summary: "Generalizing the Neural Feature Ansatz to Muon and spectral gradient descent: a whitened *SpecAGOP* tracks the learned features where the standard AGOP fails, and we are scaling this to GPT-2-style transformers. We also derive the AGOP as an optimal low-rank compression of the input and propose a covariance-weighted AGOP for non-isotropic data."
+
+- title: "Memory–sample trade-offs for learning"
+  dates: "May 2026 – present"
+  where: "University of Southern California"
+  with: "[Prof. Vatsal Sharan](https://vatsalsharan.github.io/) (USC), Prof. Kabir Verchand (USC), Prof. Ankit Pensia (CMU)"
+  summary: "Memory–sample lower bounds for testing planted-matrix streaming problems; the general theorem recovers and strengthens prior bounds of Garg, Kothari and Raz (2020)."
+
+- title: "Optimal membership inference in linear models"
+  dates: "Jan 2026 – present"
+  where: "IIT Madras"
+  with: "[Prof. Krishna Pillutla](https://krishnap25.github.io/)"
+  summary: "Characterizing optimal privacy attacks on ridge regression, with per-point susceptibility certificates in terms of residuals, leverage and effective dimension."
+
+- title: "Grokking in logistic regression"
+  dates: "Oct 2025 – present"
+  where: "Machine and Learning Theory Lab, IIT Madras"
+  with: "Prof. Chandrashekar Lakshminarayanan"
+  summary: "Explaining grokking through the implicit bias of gradient descent: a late-time imbalance in support vectors moves the bias long after the data is fit. Non-asymptotic phase-separation bounds, and class imbalance is shown to be necessary."
+
+- title: "Entanglement distribution in quantum networks"
+  dates: "Aug 2025 – present"
+  where: "B.Tech. project, IIT Madras"
+  with: "Prof. Krishna Jagannathan"
+  summary: "Exact entanglement rates for quantum repeater chains with finite memory and decoherence, and a characterization of when distillation outperforms swapping."
+
+- title: "Blind code rate recovery"
+  dates: "Jan 2025 – present"
+  where: "Satlab, IIT Madras"
+  with: "Prof. Radha Krishna Ganti"
+  summary: "Performance bounds for rank-recovery heuristics under noise, validated on over-the-air LDPC captures. Published at IEEE ISIT 2026."
+
+- title: "Quantitative research intern"
+  dates: "May – Jul 2025"
+  where: "Dynamic Technology Lab, Singapore"
+  with: ""
+  summary: "Modeled mutual-fund positions and built a spectrogram-based co-integration metric for stock pairs."

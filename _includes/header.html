@@ -1,0 +1,47 @@
+{%- comment -%}
+  Page header: name, tagline, affiliation, links and photo.
+  All values come from _config.yml — you shouldn't need to edit this file.
+{%- endcomment -%}
+<header class="hero">
+  <div class="hero__text">
+    <h1 class="hero__name">{{ site.name }}</h1>
+    {% if site.tagline %}<p class="hero__tagline">{{ site.tagline }}</p>{% endif %}
+    {% if site.affiliation %}
+    <p class="hero__affil">
+      {% if site.affiliation_url %}<a href="{{ site.affiliation_url }}">{{ site.affiliation }}</a>{% else %}{{ site.affiliation }}{% endif %}
+    </p>
+    {% endif %}
+    <ul class="links">
+      {% if site.email and site.email != "" %}
+        <li><a href="mailto:{{ site.email }}">{% include icon.html name="email" %}<span>Email</span></a></li>
+      {% endif %}
+      {% if site.cv and site.cv != "" %}
+        {%- assign cvfirst = site.cv | slice: 0 -%}
+        <li><a href="{% if cvfirst == "/" %}{{ site.cv | relative_url }}{% else %}{{ site.cv }}{% endif %}">{% include icon.html name="cv" %}<span>CV</span></a></li>
+      {% endif %}
+      {% if site.scholar and site.scholar != "" %}
+        <li><a href="{{ site.scholar }}">{% include icon.html name="scholar" %}<span>Scholar</span></a></li>
+      {% endif %}
+      {% if site.github and site.github != "" %}
+        <li><a href="https://github.com/{{ site.github }}">{% include icon.html name="github" %}<span>GitHub</span></a></li>
+      {% endif %}
+      {% if site.linkedin and site.linkedin != "" %}
+        <li><a href="https://www.linkedin.com/in/{{ site.linkedin }}">{% include icon.html name="linkedin" %}<span>LinkedIn</span></a></li>
+      {% endif %}
+      {% if site.arxiv and site.arxiv != "" %}
+        <li><a href="{{ site.arxiv }}">{% include icon.html name="arxiv" %}<span>arXiv</span></a></li>
+      {% endif %}
+      {% if site.twitter and site.twitter != "" %}
+        <li><a href="https://x.com/{{ site.twitter }}">{% include icon.html name="twitter" %}<span>X</span></a></li>
+      {% endif %}
+    </ul>
+  </div>
+  <div class="hero__photo">
+    {% if site.photo and site.photo != "" %}
+      <img src="{% assign pf = site.photo | slice: 0 %}{% if pf == "/" %}{{ site.photo | relative_url }}{% else %}{{ site.photo }}{% endif %}" alt="Photo of {{ site.name }}" width="176" height="176">
+    {% else %}
+      {%- assign parts = site.name | split: " " -%}
+      <div class="monogram" aria-hidden="true">{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</div>
+    {% endif %}
+  </div>
+</header>

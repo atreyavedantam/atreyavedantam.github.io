@@ -1,0 +1,49 @@
+# =====================================================================
+#  "MORE" SECTION — honors, service, teaching/leadership, beyond research.
+#  Each group has a heading and a list of items.
+#
+#  what:    main text (Markdown allowed)
+#  detail:  optional smaller text after it (Markdown allowed)
+#  when:    optional year / dates shown on the right
+#
+#  Add a whole new group by copying one `- heading:` block.
+# =====================================================================
+
+- heading: "Honors"
+  items:
+    - what: "IUSSTF–Viterbi Scholar"
+      detail: "Funded research program at the University of Southern California"
+      when: "2026"
+    - what: "Department Rank 2 in Electrical Engineering, IIT Madras"
+      detail: "CGPA 9.65/10, of ~175 students"
+      when: ""
+    - what: "JEE Advanced: All India Rank 315 · JEE Main: All India Rank 221"
+      detail: "Among 1M+ candidates each"
+      when: "2022"
+    - what: "KVPY Scholar"
+      detail: "All India Rank 475"
+      when: "2021"
+
+- heading: "Service"
+  items:
+    - what: "Reviewer, NeurIPS"
+      detail: ""
+      when: "2026"
+
+- heading: "Teaching & leadership"
+  items:
+    - what: "Head, Mathematics Club, IIT Madras"
+      detail: "Led a team of 70+. Founded the Srinivasa Ramanujan Mathematics Competition, India’s first olympiad-style contest for engineering undergraduates — 600+ registrations from 100+ universities in its first year."
+      when: "2023 – 25"
+    - what: "Coordinator, AI Club, IIT Madras"
+      detail: "Taught deep learning to 1000+ students nationwide; designed and ran an AI/ML challenge for 350+ participants."
+      when: "2024 – 25"
+
+- heading: "Beyond research"
+  items:
+    - what: "Novelist"
+      detail: "Wrote a 60,000-word fantasy novel, [*The Tragedy of Girion*](https://www.goodreads.com/author/show/18595417.Atreya_Vedantam) (2018), begun in 2013."
+      when: ""
+    - what: "Tennis"
+      detail: "Inter-IIT contingent probable; gold and bronze at the inter-hostel championship."
+      when: ""

@@ -14,24 +14,6 @@
 #               - src: "/media/clip.mp4"           # video file (keep under ~50 MB)
 # =====================================================================
 
-- title: "Investigating Feature Learning"
-  dates: "May 2026 – present"
-  where: "University of Southern California"
-  with: "[Prof. Vatsal Sharan](https://vatsalsharan.github.io/)"
-  summary: "Working on improving the Neural Feature Ansatz."
-
-- title: "Memory–sample tradeoffs for statistical testing"
-  dates: "May 2026 – present"
-  where: "University of Southern California"
-  with: "[Prof. Vatsal Sharan](https://vatsalsharan.github.io/) (USC), [Prof. Kabir Verchand](https://kabirverchand.github.io/) (USC), [Prof. Ankit Pensia](https://ankitp.net/) (CMU)"
-  summary: "Memory–sample lower bounds for testing planted-matrix streaming problems."
-
-- title: "Optimal membership inference in linear models"
-  dates: "Jan 2026 – present"
-  where: "IIT Madras"
-  with: "[Prof. Krishna Pillutla](https://krishnap25.github.io/)"
-  summary: "Characterizing membership inference attacks on ridge regression models."
-
 - title: "Grokking in logistic regression"
   dates: "Oct 2025 – present"
   where: "Machine and Learning Theory Lab, IIT Madras"

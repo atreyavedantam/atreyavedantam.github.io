@@ -24,15 +24,11 @@ media: []
   =====================================================================
 -->
 
-I am a student in the five-year dual-degree program in [Electrical Engineering at IIT Madras](https://www.ee.iitm.ac.in/), and currently an IUSSTF–Viterbi Scholar at the University of Southern California, where I work with [Vatsal Sharan](https://vatsalsharan.github.io/). At IIT Madras I have been fortunate to work with [Krishna Pillutla](https://krishnap25.github.io/), Chandrashekar Lakshminarayanan, Krishna Jagannathan and Radha Krishna Ganti.
+Hi! I am Atreya Vedantam, a final year undergraduate student in [Electrical Engineering at IIT Madras](https://www.ee.iitm.ac.in/). I am enrolled in the five year dual degree (combined Bachelors and Masters) program. I am quite passionate about research and thinking deeply about things. 
 
-My research is on the **theory of deep learning**. I want to understand *what* features neural networks learn, *how* the optimizer shapes them, and *when* this leads to generalization. I mostly use tools from optimization, statistics and probability, and I test the theory with experiments. Some questions I am thinking about:
+My research interests are theoretical machine learning, statistics, and more specifically theory of deep learning. As a long term goal I want to build a scientific theory of deep learning. This would enable a more principled design of models and a better understanding of safety, privacy and robustness. 
 
-- **Feature learning beyond gradient descent.** Spectral optimizers like Muon change the geometry of each update. What features do they learn, and can the Neural Feature Ansatz be extended to describe them?
-- **Implicit bias and delayed generalization.** Even a linear model trained with logistic loss can *grok*. We trace this to the slow dynamics of the bias term, which is driven by support vectors.
-- **Limits of learning.** How much memory and how many samples does a learning or testing problem need? We prove lower bounds on memory–sample trade-offs for planted-matrix problems in the streaming setting.
-- **Privacy.** How much does a trained model reveal about its training data? We characterize optimal membership inference attacks on linear models in terms of leverage and effective dimension.
+I am currently working on my Dual Degree Project (DDP) with [Vatsal Sharan](https://vatsalsharan.github.io/). This is a continuation of my summer research internship at the University of Southern California. At IIT Madras, I am fortunate to work with [Krishna Pillutla](https://krishnap25.github.io/) and Chandrashekar Lakshminarayanan. In the past I have worked in different areas. I am grateful to have worked with [Krishna Jagannathan](https://www.ee.iitm.ac.in/~krishnaj/) for my B.Tech. Project (BTP) thesis on stochastic modeling (entanglement routing in quantum networks) and [Radha Krishna Ganti](https://www.rkganti.in/) on algebraic coding theory (code recovery in linear block codes).
 
-Before this I worked on problems in information theory (blind recovery of code rates) and quantum networks (entanglement distribution in repeater chains).
 
 **I am applying to PhD programs for Fall 2027.**

@@ -6,7 +6,7 @@
 
 # --- Who you are (shown in the header) --------------------------------
 name: "Atreya Vedantam"
-tagline: "Theory of deep learning · feature learning · optimization · statistics"
+tagline: "Theoretical Machine Learning · Statistics · Deep Learning Theory · Optimization"
 affiliation: "Electrical Engineering, IIT Madras"
 affiliation_url: "https://www.ee.iitm.ac.in/"
 
@@ -14,7 +14,7 @@ affiliation_url: "https://www.ee.iitm.ac.in/"
 # the /images/ folder, e.g. images/profile.jpg, then set:
 #   photo: "/images/profile.jpg"
 # Leave empty ("") to show an "AV" monogram instead.
-photo: ""
+photo: "/images/profile.jpg"
 
 # --- Links shown under your name (delete a line to hide that link) ----
 email: "ee22b004@smail.iitm.ac.in"
@@ -42,7 +42,7 @@ news_visible: 6
 
 # --- Site metadata (browser tab, search engines, link previews) -------
 title: "Atreya Vedantam"
-description: "Atreya Vedantam — theory of deep learning, feature learning, optimization and statistical learning."
+description: "Atreya Vedantam — Theoretical Machine Learning · Statistics · Deep Learning Theory · Optimization."
 url: "https://atreyavedantam.github.io"
 baseurl: ""
 lang: "en"

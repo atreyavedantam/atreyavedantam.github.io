@@ -1,0 +1,31 @@
+# =====================================================================
+#  EXTRACURRICULARS tab (page text + page-wide photos/videos: extracurriculars.md).
+#
+#  what:    main text (Markdown allowed: **bold**, *italics*, [link](https://...))
+#  detail:  optional text under it (Markdown allowed)
+#  when:    optional year / dates shown on the right
+#  media:   optional photos / videos shown under this entry, e.g.
+#             media:
+#               - src: "/media/my-photo.jpg"          # a file you put in /media/
+#                 caption: "Optional caption"
+#               - src: "https://youtu.be/VIDEO_ID"     # YouTube link
+#               - src: "/media/clip.mp4"               # video file (keep under ~50 MB)
+#
+#  To add an entry, copy an `- what:` block. To add a new group, copy a
+#  whole `- heading:` block. For photos/videos about the tab in general
+#  (not one entry), use the `media:` list at the top of the tab's page file.
+# =====================================================================
+
+- heading: "Writing"
+  items:
+    - what: "Novelist"
+      detail: "Wrote a 60,000-word fantasy novel, [*The Tragedy of Girion*](https://www.goodreads.com/author/show/18595417.Atreya_Vedantam) (2018), begun in 2013."
+      when: ""
+      media: []
+
+- heading: "Sports"
+  items:
+    - what: "Tennis"
+      detail: "Inter-IIT contingent probable; gold and bronze at the inter-hostel championship."
+      when: ""
+      media: []

@@ -12,6 +12,12 @@
 #            project. Delete lines you don't need. Use full URLs, or paths
 #            like "/files/paper.pdf" for files you put in /files/.
 #  note:     optional one-line remark (e.g. "Oral presentation").
+#  media:   optional photos / videos shown under this entry, e.g.
+#             media:
+#               - src: "/media/my-photo.jpg"      # a file you put in /media/
+#                 caption: "Optional caption"
+#               - src: "https://youtu.be/VIDEO_ID" # YouTube link
+#               - src: "/media/clip.mp4"           # video file (keep under ~50 MB)
 #  section:  "papers" (published / accepted) or "preprints"
 #            (preprints, under review, in preparation).
 # =====================================================================

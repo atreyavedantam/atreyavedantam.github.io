@@ -2,9 +2,7 @@
   Publications. Content lives in _data/publications.yml.
   Papers are split into two groups by their `section:` field.
 {%- endcomment -%}
-<section id="publications" class="section">
-  <h2 class="section__title">Publications</h2>
-  <p class="section__note">
+<p class="section__note">
     See also my <a href="{{ site.scholar }}">Google Scholar</a> profile.
   </p>
 
@@ -49,9 +47,9 @@
           {% endfor %}
         </div>
         {% endif %}
+        {% include media.html items=p.media %}
       </li>
       {% endfor %}
     </ol>
     {% endif %}
   {% endfor %}
-</section>

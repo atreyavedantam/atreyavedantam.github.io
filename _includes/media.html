@@ -1,0 +1,34 @@
+{%- comment -%}
+  Photo / video gallery. Usage: {% include media.html items=some_list %}
+  Each item: { src: "...", caption: "..." }
+    - src ending in .mp4 / .webm / .mov  -> video player
+    - YouTube link (youtube.com/watch?v=…, youtu.be/…, /shorts/…) -> embedded video
+    - anything else -> photo (click to open full size)
+  Paths starting with "/" point at files in this repo (e.g. "/media/tennis.jpg").
+{%- endcomment -%}
+{% if include.items and include.items.size > 0 %}
+<div class="gallery{% if include.items.size == 1 %} gallery--single{% endif %}">
+  {% for m in include.items %}
+    {%- assign src = m.src | default: m -%}
+    {%- assign first = src | slice: 0 -%}
+    {%- if first == "/" -%}{%- assign url = src | relative_url -%}{%- else -%}{%- assign url = src -%}{%- endif -%}
+    {%- assign lower = src | downcase | split: "?" | first -%}
+    {%- assign yt = "" -%}
+    {%- if lower contains "youtu.be/" -%}{%- assign yt = src | split: "youtu.be/" | last | split: "?" | first -%}
+    {%- elsif lower contains "youtube.com/shorts/" -%}{%- assign yt = src | split: "/shorts/" | last | split: "?" | first -%}
+    {%- elsif lower contains "youtube.com/embed/" -%}{%- assign yt = src | split: "/embed/" | last | split: "?" | first -%}
+    {%- elsif src contains "youtube.com" and src contains "v=" -%}{%- assign yt = src | split: "v=" | last | split: "&" | first -%}
+    {%- endif -%}
+    <figure class="gallery__item">
+      {%- if yt != "" -%}
+        <div class="gallery__embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ yt }}" title="{{ m.caption | default: 'Video' | escape }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      {%- elsif lower contains ".mp4" or lower contains ".webm" or lower contains ".mov" -%}
+        <video src="{{ url }}" controls preload="metadata" playsinline></video>
+      {%- else -%}
+        <a href="{{ url }}" target="_blank" rel="noopener"><img src="{{ url }}" alt="{{ m.caption | default: 'Photo' | escape }}" loading="lazy"></a>
+      {%- endif -%}
+      {%- if m.caption and m.caption != "" -%}<figcaption>{{ m.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{%- endif -%}
+    </figure>
+  {% endfor %}
+</div>
+{% endif %}

@@ -1,66 +1,50 @@
 # atreyavedantam.github.io
 
-This is my personal academic website: a single page built with plain Jekyll. GitHub Pages builds it on every push to `master`, and the live site is at <https://atreyavedantam.github.io>.
+This is my personal academic website, built with plain Jekyll. GitHub Pages rebuilds it on every push to `master`, and the live site is at <https://atreyavedantam.github.io>.
+
+Each tab in the top menu is its own page: **About, News, Publications, Research, Teaching, Service, Extracurriculars**.
 
 ## Where to edit what
 
-| To change… | Edit this file |
+| Tab / item | Page file (intro text + tab photos/videos) | Entries |
+|---|---|---|
+| **About** (home) | `index.md` | Honors: `_data/honors.yml` |
+| **News** | `news.md` | `_data/news.yml` |
+| **Publications** | `publications.md` | `_data/publications.yml` |
+| **Research** | `research.md` | `_data/research.yml` |
+| **Teaching** | `teaching.md` | `_data/teaching.yml` |
+| **Service** | `service.md` | `_data/service.yml` |
+| **Extracurriculars** | `extracurriculars.md` | `_data/extracurriculars.yml` |
+
+| Other things | Where |
 |---|---|
-| Name, tagline, affiliation, email, links (Scholar, GitHub, LinkedIn, arXiv, X), photo, top-menu items | `_config.yml` |
-| The **About / research interests** text at the top | `index.md` |
-| **News** items | `_data/news.yml` |
-| **Publications** (papers and preprints) | `_data/publications.yml` |
-| **Research experience** (projects and advisors) | `_data/research.yml` |
-| **Honors, service, teaching & leadership, beyond research** | `_data/more.yml` |
+| Name, tagline, affiliation, email, links, tab order | `_config.yml` |
+| **Profile photo** | upload a square image to `images/` (e.g. `images/profile.jpg`), then set `photo: "/images/profile.jpg"` in `_config.yml` |
 | CV PDF (the "CV" button) | replace `files/cv.pdf` |
-| Profile photo | add e.g. `images/profile.jpg`, then set `photo: "/images/profile.jpg"` in `_config.yml` |
-| Colors and fonts | the tokens at the top of `assets/css/style.css` (`--accent` is the link color) |
-| Tab icon | `favicon.svg` |
+| Colors and fonts | tokens at the top of `assets/css/style.css` |
 
-Every `_data/*.yml` file begins with a comment that explains its fields. To add an entry, copy an existing block and edit it.
+Every `_data/*.yml` file and every page file begins with a comment explaining its fields. To add an entry, copy an existing block and edit it.
 
-### Common tasks
+## Photos and videos
 
-**Add a news item.** Put it at the top of `_data/news.yml`:
+Every tab can show photos and videos, in two places:
 
-```yaml
-- date: "Oct 2026"
-  text: "Our paper [Title](https://arxiv.org/abs/XXXX.XXXXX) was accepted at **ICLR 2027**!"
-```
-
-**Add a paper.** Add a block to `_data/publications.yml`. Use `section: "papers"` for accepted or published work and `section: "preprints"` for preprints and work in preparation. Your own name is bolded automatically.
+1. **For the whole tab.** Fill in the `media:` list at the top of the tab's page file (e.g. `extracurriculars.md`). These appear under "Photos & videos" at the bottom of the tab.
+2. **For one entry.** Add a `media:` list to that entry in its `_data/*.yml` file. These appear right under the entry.
 
 ```yaml
-- title: "Paper title"
-  authors: ["First Author", "Atreya Vedantam", "Last Author"]
-  venue: "International Conference on Learning Representations (ICLR), 2027"
-  tag: "ICLR 2027"
-  section: "papers"
-  links:
-    arxiv: "https://arxiv.org/abs/XXXX.XXXXX"
-    pdf: "/files/paper.pdf"
-    code: "https://github.com/..."
+media:
+  - src: "/media/tennis-final.jpg"                 # upload the file to the media/ folder
+    caption: "Inter-hostel final, 2024"
+  - src: "https://www.youtube.com/watch?v=VIDEO_ID" # YouTube videos are embedded
+  - src: "/media/talk.mp4"                          # .mp4 / .webm / .mov files get a player
 ```
 
-**Move a preprint to papers once it's accepted.** Change its `section` to `"papers"`, then update `venue` and `tag`.
+Upload files to the `media/` folder (on GitHub: open the folder → **Add file → Upload files**). GitHub rejects files over 100 MB, so put long videos on YouTube and link them.
 
-**Add a new section to the page** (for example "Talks"). Copy `_includes/news.html` to `_includes/talks.html` and create `_data/talks.yml`. Add `{% include talks.html %}` to `_layouts/default.html` and a `nav:` entry in `_config.yml`.
+## Add a new tab
 
-## File layout
-
-```
-_config.yml            site settings: name, links, photo, menu
-index.md               About + research interests (Markdown)
-_data/                 page content as YAML (news, publications, research, more)
-_includes/             one HTML file per section (header, news, publications, …)
-_layouts/default.html  page skeleton: nav, section order, footer, dark-mode toggle
-assets/css/style.css   all styling (light and dark themes)
-files/                 PDFs (CV, papers, slides)
-images/                photos
-404.html, favicon.svg
-```
-
-The files in `_includes/` and `_layouts/` read their content from `_config.yml` and `_data/`, so for normal updates you shouldn't need to touch them.
+Copy `teaching.md` to e.g. `talks.md` and change its `title`, `permalink` and `section`. Create `_data/talks.yml` in the same format as `_data/teaching.yml`. Add a `{% when "talks" %}` line next to the others in `_layouts/default.html`, and add a `nav:` entry in `_config.yml`.
 
 ## Preview locally (optional)
 

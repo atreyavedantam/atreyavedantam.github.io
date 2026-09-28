@@ -3,6 +3,12 @@
 #
 #  date: free text shown on the left, e.g. "Sep 2026"
 #  text: one line; Markdown works: **bold**, *italics*, [link](https://...)
+#  media:   optional photos / videos shown under this entry, e.g.
+#             media:
+#               - src: "/media/my-photo.jpg"      # a file you put in /media/
+#                 caption: "Optional caption"
+#               - src: "https://youtu.be/VIDEO_ID" # YouTube link
+#               - src: "/media/clip.mp4"           # video file (keep under ~50 MB)
 #
 #  The first `news_visible` items (set in _config.yml) are always shown;
 #  older ones are tucked behind a "Show older news" toggle.

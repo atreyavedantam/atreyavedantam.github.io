@@ -28,7 +28,7 @@
     <div class="wrap topnav__inner">
       <a class="topnav__name" href="{{ '/' | relative_url }}">{{ site.name }}</a>
       <div class="topnav__links">
-        {% for item in site.nav %}<a href="{{ item.url }}">{{ item.title }}</a>{% endfor %}
+        {% for item in site.nav %}{% assign item_url = item.url | relative_url %}<a href="{{ item_url }}"{% if page.url == item.url %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}
       </div>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
         <span class="when-light">{% include icon.html name="moon" %}</span>
@@ -38,16 +38,42 @@
   </nav>
 
   <main class="wrap">
-    {% include header.html %}
+    {%- comment -%}
+      Each tab is its own page (index.md, news.md, publications.md, …).
+      The page's `section:` decides which list from _data/ is shown under
+      its text, and its `media:` list becomes a photo/video gallery.
+    {%- endcomment -%}
+    {% if page.section == "about" %}
+      {% include header.html %}
+    {% else %}
+      <h1 class="page-title">{{ page.title }}</h1>
+    {% endif %}
 
-    <section id="about" class="section prose">
+    {% assign intro = content | strip_html | strip %}
+    {% if intro != "" or content contains "<img" or content contains "<iframe" %}
+    <section class="prose page-intro">
       {{ content }}
     </section>
+    {% endif %}
 
-    {% include news.html %}
-    {% include publications.html %}
-    {% include research.html %}
-    {% include more.html %}
+    <section class="page-body">
+      {% case page.section %}
+        {% when "about" %}{% if site.data.honors.size > 0 %}<div class="section">{% include groups.html data=site.data.honors %}</div>{% endif %}
+        {% when "news" %}{% include news.html %}
+        {% when "publications" %}{% include publications.html %}
+        {% when "research" %}{% include research.html %}
+        {% when "teaching" %}{% include groups.html data=site.data.teaching %}
+        {% when "service" %}{% include groups.html data=site.data.service %}
+        {% when "extracurriculars" %}{% include groups.html data=site.data.extracurriculars %}
+      {% endcase %}
+    </section>
+
+    {% if page.media and page.media.size > 0 %}
+    <section class="section">
+      <h2 class="subhead">Photos &amp; videos</h2>
+      {% include media.html items=page.media %}
+    </section>
+    {% endif %}
   </main>
 
   <footer class="wrap footer">
@@ -56,6 +82,11 @@
   </footer>
 
   <script>
+    /* On narrow screens the tab bar scrolls sideways; keep the current tab visible. */
+    (function () {
+      var a = document.querySelector('.topnav__links .is-active');
+      if (a && a.scrollIntoView) a.scrollIntoView({ block: 'nearest', inline: 'center' });
+    })();
     (function () {
       var root = document.documentElement;
       document.querySelector('.theme-toggle').addEventListener('click', function () {

@@ -1,0 +1,22 @@
+{%- comment -%}
+  Renders a list of headed groups (used by Honors, Teaching, Service,
+  Extracurriculars). Usage: {% include groups.html data=site.data.teaching %}
+  Content lives in the matching _data/*.yml file.
+{%- endcomment -%}
+{% for group in include.data %}
+<div class="group">
+  {% if group.heading and group.heading != "" %}<h3 class="subhead">{{ group.heading }}</h3>{% endif %}
+  <ul class="entries">
+    {% for it in group.items %}
+    <li class="entry">
+      <div class="entry__row">
+        <span class="entry__what">{{ it.what | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+        {% if it.when and it.when != "" %}<span class="entry__when">{{ it.when }}</span>{% endif %}
+      </div>
+      {% if it.detail and it.detail != "" %}<div class="entry__detail">{{ it.detail | markdownify }}</div>{% endif %}
+      {% include media.html items=it.media %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}

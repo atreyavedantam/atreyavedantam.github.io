@@ -1,13 +1,26 @@
 ---
 layout: default
+section: about
+# Honors (shown below this text) live in _data/honors.yml.
+# Photos & videos for this tab, shown at the bottom of the page.
+# Upload files into the /media/ folder, then list them here, e.g.
+#   media:
+#     - src: "/media/my-photo.jpg"
+#       caption: "Optional caption (Markdown allowed)"
+#     - src: "https://www.youtube.com/watch?v=VIDEO_ID"   # YouTube link
+#     - src: "/media/clip.mp4"                            # video file (keep under ~50 MB)
+# To attach a photo/video to ONE entry instead, add `media:` to that entry
+# in the _data/honors.yml file.
+media: []
 ---
 
 <!--
   =====================================================================
-   ABOUT + RESEARCH INTERESTS — this is the text at the top of the page.
+   ABOUT TAB (the home page) — this is the text under your name and photo.
    Plain Markdown: **bold**, *italics*, [link text](https://...).
-   Everything below the About section (news, publications, research,
-   honors…) is filled in from the files in _data/ — edit those instead.
+   Every other tab is its own page file (news.md, publications.md,
+   research.md, teaching.md, service.md, extracurriculars.md), and the
+   entries on each tab come from the matching file in _data/.
   =====================================================================
 -->
 

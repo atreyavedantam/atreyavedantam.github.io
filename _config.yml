@@ -10,8 +10,10 @@ tagline: "Theory of deep learning · feature learning · optimization · statist
 affiliation: "Electrical Engineering, IIT Madras"
 affiliation_url: "https://www.ee.iitm.ac.in/"
 
-# Profile photo. Put a square image in /images/ and write its path here,
-# e.g. "/images/profile.jpg". Leave empty ("") to show an "AV" monogram.
+# PROFILE PHOTO: upload a square image (ideally 400x400 px or larger) into
+# the /images/ folder, e.g. images/profile.jpg, then set:
+#   photo: "/images/profile.jpg"
+# Leave empty ("") to show an "AV" monogram instead.
 photo: ""
 
 # --- Links shown under your name (delete a line to hide that link) ----
@@ -23,13 +25,17 @@ linkedin: "atreya-vedantam-249890276"
 arxiv: ""                           # e.g. "https://arxiv.org/a/vedantam_a_1"
 twitter: ""                         # handle without the @
 
-# --- Top navigation (each item jumps to a section on the page) --------
+# --- Top navigation: one tab per page ---------------------------------
+# Each tab is its own page file in the repo root (index.md, news.md, …).
+# Reorder the lines to reorder tabs; delete a line to hide a tab.
 nav:
-  - { title: "About",        url: "#about" }
-  - { title: "News",         url: "#news" }
-  - { title: "Publications", url: "#publications" }
-  - { title: "Research",     url: "#research" }
-  - { title: "More",         url: "#more" }
+  - { title: "About",            url: "/" }
+  - { title: "News",             url: "/news/" }
+  - { title: "Publications",     url: "/publications/" }
+  - { title: "Research",         url: "/research/" }
+  - { title: "Teaching",         url: "/teaching/" }
+  - { title: "Service",          url: "/service/" }
+  - { title: "Extracurriculars", url: "/extracurriculars/" }
 
 # How many news items to show before the "Show older news" toggle.
 news_visible: 6
@@ -53,3 +59,5 @@ exclude:
   - vendor
   - .github
   - node_modules
+  - media/.gitkeep
+  - images/.gitkeep

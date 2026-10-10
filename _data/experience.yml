@@ -19,36 +19,29 @@
 
 - heading: "Positions of responsibility"
   items:
-    - what: "Head, Mathematics Club, IIT Madras"
-      detail: "I had the privilege of leading the Mathematics Club alongside a wonderful team of coordinators. Together we ran the club’s Summer School, which drew students from across India, supported student projects on topics ranging from combinatorial games to dynamical systems, and set up the club’s first website."
+    - what: "Head, [Mathematics Club](https://mathiitm.com/), IIT Madras"
+      detail: "I had the privilege of co-leading the Mathematics Club alongside a wonderful team of coordinators. Together, we organized events and competitions such as the Integration Bee and *a*<sub>*i*</sub> to AI."
       when: "2023 – 25"
       media: []
       sub:
-        - what: "Founder, Srinivasa Ramanujan Mathematics Competition (SRMC)"
+        - what: "Founder, [Srinivasa Ramanujan Mathematics Competition (SRMC)](https://srmc.co.in/)"
           detail: "With the club, I started SRMC, an olympiad-style mathematics competition for engineering undergraduates. It was heartening to see students from more than a hundred universities take part in its first year."
           when: ""
-    - what: "Deputy Coordinator, Mathematics Club, IIT Madras"
-      when: ""
-    - what: "Coordinator, AI Club, IIT Madras"
+    - what: "Coordinator, [AI Club](https://aiclubcfi.com/), IIT Madras"
       when: "2024 – 25"
 
 - heading: "Mentoring & outreach"
   items:
     - what: "Saathi Mentor, IIT Madras"
       when: "Aug 2023 – Apr 2024"
-    - what: "Teaching Assistant, SATHEE"
+    - what: "Teaching Assistant, [SATHEE](https://sathee.iitk.ac.in/)"
       when: "Apr – Oct 2023"
-    - what: "Mentor, Avanti Fellows"
+    - what: "Mentor, [Avanti Fellows](https://avantifellows.org/)"
       when: "Nov 2022 – Oct 2023"
 
 - heading: "Writing & media"
   items:
     - what: "Writing Club Contingent, IIT Madras"
       when: "Feb 2023 – Feb 2024"
-    - what: "Assistant Content Creator, IITM TV"
+    - what: "Assistant Content Creator, [IITM TV](https://www.youtube.com/user/IITMTV)"
       when: "Mar – Jul 2023"
-
-- heading: "Reviewing"
-  items:
-    - what: "Reviewer, NeurIPS"
-      when: "2026"

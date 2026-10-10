@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Extracurriculars"
-permalink: /extracurriculars/
-section: extracurriculars
+title: "Experience"
+permalink: /experience/
+section: experience
 # Photos & videos for this tab, shown at the bottom of the page.
 # Upload files into the /media/ folder, then list them here, e.g.
 #   media:
@@ -11,13 +11,13 @@ section: extracurriculars
 #     - src: "https://www.youtube.com/watch?v=VIDEO_ID"   # YouTube link
 #     - src: "/media/clip.mp4"                            # video file (keep under ~50 MB)
 # To attach a photo/video to ONE entry instead, add `media:` to that entry
-# in _data/extracurriculars.yml.
+# in _data/experience.yml.
 media: []
 ---
 
 <!--
-  EXTRACURRICULARS TAB.
+  EXPERIENCE TAB.
   Anything you write below this comment (plain Markdown) appears at the top
-  of the tab, above your extracurricular entries. The entries themselves live in _data/extracurriculars.yml.
+  of the tab, above your experience entries. The entries themselves live in _data/experience.yml.
   Leave it empty if you don't need an intro.
 -->

@@ -32,9 +32,10 @@
     pdf: "https://arxiv.org/pdf/2603.02031"
 
 - title: "Grokking in Linear Models for Logistic Regression"
-  authors: ["Nataraj Das", "Atreya Vedantam", "Chandrashekar Lakshminarayanan"]
+  authors: ["Atreya Vedantam*", "Nataraj Das*", "Chandrashekar Lakshminarayanan"]
   venue: "arXiv preprint arXiv:2602.08302, 2026"
   tag: "Preprint"
+  note: "* Equal contribution"
   section: "preprints"
   links:
     arxiv: "https://arxiv.org/abs/2602.08302"

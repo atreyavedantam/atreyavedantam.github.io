@@ -2,7 +2,7 @@
 
 This is my personal academic website, built with plain Jekyll. GitHub Pages rebuilds it on every push to `master`, and the live site is at <https://atreyavedantam.github.io>.
 
-Each tab in the top menu is its own page: **About, News, Publications, Teaching, Experiences, Extracurriculars**.
+Each tab in the top menu is its own page: **About, News, Publications, Teaching, Experience, Blog**.
 
 ## Where to edit what
 
@@ -12,8 +12,8 @@ Each tab in the top menu is its own page: **About, News, Publications, Teaching,
 | **News** | `news.md` | `_data/news.yml` |
 | **Publications** | `publications.md` | `_data/publications.yml` |
 | **Teaching** | `teaching.md` | `_data/teaching.yml` |
-| **Experiences** | `experiences.md` | `_data/experiences.yml` |
-| **Extracurriculars** | `extracurriculars.md` | `_data/extracurriculars.yml` |
+| **Experience** | `experience.md` | `_data/experience.yml` |
+| **Blog** | `blog.md` | posts in `_posts/` |
 
 | Other things | Where |
 |---|---|
@@ -24,11 +24,24 @@ Each tab in the top menu is its own page: **About, News, Publications, Teaching,
 
 Every `_data/*.yml` file and every page file begins with a comment explaining its fields. To add an entry, copy an existing block and edit it.
 
+## Write a blog post
+
+Create a file in `_posts/` named `YYYY-MM-DD-short-title.md` (e.g. `_posts/2026-11-02-why-grokking.md`) that starts with:
+
+```yaml
+---
+title: "Why does grokking happen?"
+description: "One-line summary shown in the blog list (optional)"
+---
+```
+
+Then write the post in Markdown below it. It appears on the Blog tab automatically, newest first. `_drafts/example-post.md` is a template to copy (files in `_drafts/` are never published).
+
 ## Photos and videos
 
 Every tab can show photos and videos, in two places:
 
-1. **For the whole tab.** Fill in the `media:` list at the top of the tab's page file (e.g. `extracurriculars.md`). These appear under "Photos & videos" at the bottom of the tab.
+1. **For the whole tab.** Fill in the `media:` list at the top of the tab's page file (e.g. `teaching.md`). These appear under "Photos & videos" at the bottom of the tab.
 2. **For one entry.** Add a `media:` list to that entry in its `_data/*.yml` file. These appear right under the entry.
 
 ```yaml

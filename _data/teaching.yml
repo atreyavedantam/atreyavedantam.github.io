@@ -19,22 +19,22 @@
 - heading: "Teaching assistant, IIT Madras"
   items:
     - what: "Convex Optimization"
-      detail: ""
+      detail: "with [Prof. Pravin Nair](https://www.ee.iitm.ac.in/faculty/profile/pravinnair)"
       when: "Jul – Nov 2026"
       media: []
     - what: "Signals and Systems"
-      detail: ""
+      detail: "with [Prof. Krishna Jagannathan](https://www.ee.iitm.ac.in/~krishnaj/)"
       when: "Jan – May 2026"
       media: []
     - what: "Introduction to Wireless and Cellular Communication"
-      detail: ""
-      when: "Jan – May 2026"
+      detail: "with [Prof. David Koilpillai](https://www.ee.iitm.ac.in/faculty/profile/davidk)"
+      when: "Jul – Nov 2025"
       media: []
     - what: "Multirate Digital Signal Processing"
-      detail: ""
+      detail: "with [Prof. David Koilpillai](https://www.ee.iitm.ac.in/faculty/profile/davidk)"
       when: "Jan – May 2025"
       media: []
     - what: "Engineering Electromagnetics"
-      detail: ""
+      detail: "with [Prof. Deepa Venkitesh](https://sites.google.com/a/ee.iitm.ac.in/deepav/)"
       when: "Jul – Nov 2024"
       media: []

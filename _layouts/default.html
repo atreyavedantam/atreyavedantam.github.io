@@ -28,7 +28,7 @@
     <div class="wrap topnav__inner">
       <a class="topnav__name" href="{{ '/' | relative_url }}">{{ site.name }}</a>
       <div class="topnav__links">
-        {% for item in site.nav %}{% assign item_url = item.url | relative_url %}<a href="{{ item_url }}"{% if page.url == item.url %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}
+        {% for item in site.nav %}{% assign item_url = item.url | relative_url %}<a href="{{ item_url }}"{% if page.url == item.url %} class="is-active" aria-current="page"{% elsif item.url == "/blog/" and page.collection == "posts" %} class="is-active"{% endif %}>{{ item.title }}</a>{% endfor %}
       </div>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
         <span class="when-light">{% include icon.html name="moon" %}</span>
@@ -47,10 +47,11 @@
       {% include header.html %}
     {% else %}
       <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.collection == "posts" %}<p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>{% endif %}
     {% endif %}
 
     {% assign intro = content | strip_html | strip %}
-    {% if intro != "" or content contains "<img" or content contains "<iframe" %}
+    {% if intro != "" or content contains "<img" or content contains "<iframe" or content contains "<video" %}
     <section class="prose page-intro">
       {{ content }}
     </section>
@@ -62,8 +63,8 @@
         {% when "news" %}{% include news.html %}
         {% when "publications" %}{% include publications.html %}
         {% when "teaching" %}{% include groups.html data=site.data.teaching %}
-        {% when "experiences" %}{% include groups.html data=site.data.experiences %}
-        {% when "extracurriculars" %}{% include groups.html data=site.data.extracurriculars %}
+        {% when "experience" %}{% include groups.html data=site.data.experience %}
+        {% when "blog" %}{% include blog.html %}
       {% endcase %}
     </section>
 

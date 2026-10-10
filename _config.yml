@@ -33,8 +33,8 @@ nav:
   - { title: "News",             url: "/news/" }
   - { title: "Publications",     url: "/publications/" }
   - { title: "Teaching",         url: "/teaching/" }
-  - { title: "Experiences",      url: "/experiences/" }
-  - { title: "Extracurriculars", url: "/extracurriculars/" }
+  - { title: "Experience",       url: "/experience/" }
+  - { title: "Blog",             url: "/blog/" }
 
 # How many news items to show before the "Show older news" toggle.
 news_visible: 6
@@ -45,6 +45,12 @@ description: "Atreya Vedantam — Theoretical Machine Learning · Statistics · 
 url: "https://atreyavedantam.github.io"
 baseurl: ""
 lang: "en"
+
+# --- Blog posts (files in _posts/) ----------------------------------
+permalink: /blog/:year/:month/:title/
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: default, section: post }
 
 # --- Build settings (no need to touch) --------------------------------
 markdown: kramdown

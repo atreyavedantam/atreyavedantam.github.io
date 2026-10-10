@@ -1,0 +1,54 @@
+# =====================================================================
+#  EXPERIENCE tab (page text + page-wide photos/videos: experience.md).
+#
+#  what:    main text (Markdown allowed: **bold**, *italics*, [link](https://...))
+#  detail:  optional text under it (Markdown allowed)
+#  when:    optional year / dates shown on the right
+#  sub:     optional list of sub-entries (same fields), shown indented
+#  media:   optional photos / videos shown under this entry, e.g.
+#             media:
+#               - src: "/media/my-photo.jpg"          # a file you put in /media/
+#                 caption: "Optional caption"
+#               - src: "https://youtu.be/VIDEO_ID"     # YouTube link
+#               - src: "/media/clip.mp4"               # video file (keep under ~50 MB)
+#
+#  To add an entry, copy an `- what:` block. To add a new group, copy a
+#  whole `- heading:` block. For photos/videos about the tab in general
+#  (not one entry), use the `media:` list at the top of the tab's page file.
+# =====================================================================
+
+- heading: "Positions of responsibility"
+  items:
+    - what: "Head, Mathematics Club, IIT Madras"
+      detail: "I had the privilege of leading the Mathematics Club alongside a wonderful team of coordinators. Together we ran the club’s Summer School, which drew students from across India, supported student projects on topics ranging from combinatorial games to dynamical systems, and set up the club’s first website."
+      when: "2023 – 25"
+      media: []
+      sub:
+        - what: "Founder, Srinivasa Ramanujan Mathematics Competition (SRMC)"
+          detail: "With the club, I started SRMC, an olympiad-style mathematics competition for engineering undergraduates. It was heartening to see students from more than a hundred universities take part in its first year."
+          when: ""
+    - what: "Deputy Coordinator, Mathematics Club, IIT Madras"
+      when: ""
+    - what: "Coordinator, AI Club, IIT Madras"
+      when: "2024 – 25"
+
+- heading: "Mentoring & outreach"
+  items:
+    - what: "Saathi Mentor, IIT Madras"
+      when: "Aug 2023 – Apr 2024"
+    - what: "Teaching Assistant, SATHEE"
+      when: "Apr – Oct 2023"
+    - what: "Mentor, Avanti Fellows"
+      when: "Nov 2022 – Oct 2023"
+
+- heading: "Writing & media"
+  items:
+    - what: "Writing Club Contingent, IIT Madras"
+      when: "Feb 2023 – Feb 2024"
+    - what: "Assistant Content Creator, IITM TV"
+      when: "Mar – Jul 2023"
+
+- heading: "Reviewing"
+  items:
+    - what: "Reviewer, NeurIPS"
+      when: "2026"

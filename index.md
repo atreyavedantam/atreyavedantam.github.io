@@ -19,7 +19,7 @@ media: []
    ABOUT TAB (the home page) — this is the text under your name and photo.
    Plain Markdown: **bold**, *italics*, [link text](https://...).
    Every other tab is its own page file (news.md, publications.md,
-   teaching.md, experiences.md, extracurriculars.md), and the
+   teaching.md, experience.md, blog.md), and the
    entries on each tab come from the matching file in _data/.
   =====================================================================
 -->
@@ -28,10 +28,12 @@ Hi! I am Atreya Vedantam, a final year undergraduate student in [Electrical Engi
 
 My research interests are theoretical machine learning, statistics, and more specifically theory of deep learning. As a long term goal I want to build a scientific theory of deep learning. This would enable a more principled design of models and a better understanding of safety, privacy and robustness. 
 
-I am currently working on my Dual Degree Project (DDP) with [Vatsal Sharan](https://vatsalsharan.github.io/) on memory-sample tradeoffs for testing. I am also parallely working on investigating feature learning mechanisms and the effect of optimizers. This is a continuation of my summer research internship at the University of Southern California. At IIT Madras, I am fortunate to work with [Krishna Pillutla](https://krishnap25.github.io/) on AI privacy and Chandrashekar Lakshminarayanan on implicit bias in dynamics. 
+I am currently working on my Dual Degree Project (DDP) with [Prof. Vatsal Sharan](https://vatsalsharan.github.io/) on memory-sample tradeoffs for testing. I am also parallely working on investigating feature learning mechanisms and the effect of optimizers. This is a continuation of my summer research internship at the University of Southern California. At IIT Madras, I am fortunate to work with [Prof. Krishna Pillutla](https://krishnap25.github.io/) on AI privacy and Prof. Chandrashekar Lakshminarayanan on implicit bias in dynamics. 
 
-In the past I have worked in different areas. I am grateful to have worked with [Krishna Jagannathan](https://www.ee.iitm.ac.in/~krishnaj/) for my B.Tech. Project (BTP) thesis on stochastic modeling (entanglement routing in quantum networks), [Radha Krishna Ganti](https://www.rkganti.in/) on algebraic coding theory (code recovery in linear block codes) and [Deepa Venkitesh](https://sites.google.com/a/ee.iitm.ac.in/deepav/) and [Lakshmi Narasimhan Theagarajan](https://sites.google.com/view/lakshminarasimhan/bio) on spectral analysis (extending dispersive fourier transformation beyond short pulses).
+In the past I have worked in different areas. I am grateful to have worked with [Prof. Krishna Jagannathan](https://www.ee.iitm.ac.in/~krishnaj/) for my B.Tech. Project (BTP) thesis on stochastic modeling (entanglement routing in quantum networks), [Prof. Radha Krishna Ganti](https://www.rkganti.in/) on algebraic coding theory (code recovery in linear block codes) and [Prof. Deepa Venkitesh](https://sites.google.com/a/ee.iitm.ac.in/deepav/) and [Prof. Lakshmi Narasimhan Theagarajan](https://sites.google.com/view/lakshminarasimhan/bio) on spectral analysis (extending dispersive fourier transformation beyond short pulses).
 
 In what seems like a previous lifetime, I was interested in quantitative finance. I enjoyed spending a summer interning at [Dynamic Technology Lab](https://www.dytechlab.com/), a hedge fund based in Singapore.
+
+In my free time, I play tennis and sing Carnatic (Indian classical) music. I also enjoy reading fiction, and I [write](https://www.goodreads.com/author/show/18595417.Atreya_Vedantam) too.
 
 **I am applying to PhD programs for Fall 2027.**

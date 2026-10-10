@@ -1,6 +1,6 @@
 {%- comment -%}
-  Renders a list of headed groups (used by Honors, Teaching, Service,
-  Extracurriculars). Usage: {% include groups.html data=site.data.teaching %}
+  Renders a list of headed groups (used by Honors, Teaching and Experience).
+  Usage: {% include groups.html data=site.data.teaching %}
   Content lives in the matching _data/*.yml file.
 {%- endcomment -%}
 {% for group in include.data %}
@@ -15,6 +15,20 @@
       </div>
       {% if it.detail and it.detail != "" %}<div class="entry__detail">{{ it.detail | markdownify }}</div>{% endif %}
       {% include media.html items=it.media %}
+      {% if it.sub and it.sub.size > 0 %}
+      <ul class="entries entries--sub">
+        {% for sb in it.sub %}
+        <li class="entry">
+          <div class="entry__row">
+            <span class="entry__what">{{ sb.what | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+            {% if sb.when and sb.when != "" %}<span class="entry__when">{{ sb.when }}</span>{% endif %}
+          </div>
+          {% if sb.detail and sb.detail != "" %}<div class="entry__detail">{{ sb.detail | markdownify }}</div>{% endif %}
+          {% include media.html items=sb.media %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>

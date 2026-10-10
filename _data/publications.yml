@@ -39,10 +39,3 @@
   links:
     arxiv: "https://arxiv.org/abs/2602.08302"
     pdf: "https://arxiv.org/pdf/2602.08302"
-
-- title: "Intervention for Entanglement Routing in a Homogeneous Quantum Repeater Chain with Distillation"
-  authors: ["Atreya Vedantam", "Krishna Jagannathan"]
-  venue: "In preparation"
-  tag: ""
-  section: "preprints"
-  links: {}

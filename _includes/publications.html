@@ -6,7 +6,7 @@
     See also my <a href="{{ site.scholar }}">Google Scholar</a> profile.
   </p>
 
-  {%- assign groups = "papers|Papers,preprints|Preprints &amp; in preparation" | split: "," -%}
+  {%- assign groups = "papers|Papers,preprints|Preprints" | split: "," -%}
   {% for g in groups %}
     {%- assign key = g | split: "|" | first -%}
     {%- assign label = g | split: "|" | last -%}

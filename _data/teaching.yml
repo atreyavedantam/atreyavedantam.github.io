@@ -16,9 +16,25 @@
 #  (not one entry), use the `media:` list at the top of the tab's page file.
 # =====================================================================
 
-- heading: "Teaching"
+- heading: "Teaching assistant, IIT Madras"
   items:
-    - what: "Coordinator, AI Club, IIT Madras"
-      detail: "Taught deep learning to 1000+ students nationwide; designed and ran an AI/ML challenge for 350+ participants."
-      when: "2024 – 25"
+    - what: "Convex Optimization"
+      detail: ""
+      when: "Jul – Nov 2026"
+      media: []
+    - what: "Signals and Systems"
+      detail: ""
+      when: "Jan – May 2026"
+      media: []
+    - what: "Introduction to Wireless and Cellular Communication"
+      detail: ""
+      when: "Jan – May 2026"
+      media: []
+    - what: "Multirate Digital Signal Processing"
+      detail: ""
+      when: "Jan – May 2025"
+      media: []
+    - what: "Engineering Electromagnetics"
+      detail: ""
+      when: "Jul – Nov 2024"
       media: []

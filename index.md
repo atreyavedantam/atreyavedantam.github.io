@@ -19,7 +19,7 @@ media: []
    ABOUT TAB (the home page) — this is the text under your name and photo.
    Plain Markdown: **bold**, *italics*, [link text](https://...).
    Every other tab is its own page file (news.md, publications.md,
-   research.md, teaching.md, service.md, extracurriculars.md), and the
+   teaching.md, experiences.md, extracurriculars.md), and the
    entries on each tab come from the matching file in _data/.
   =====================================================================
 -->

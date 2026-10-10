@@ -1,0 +1,69 @@
+# =====================================================================
+#  EXPERIENCES tab (page text + page-wide photos/videos: experiences.md).
+#
+#  what:    main text (Markdown allowed: **bold**, *italics*, [link](https://...))
+#  detail:  optional text under it (Markdown allowed)
+#  when:    optional year / dates shown on the right
+#  media:   optional photos / videos shown under this entry, e.g.
+#             media:
+#               - src: "/media/my-photo.jpg"          # a file you put in /media/
+#                 caption: "Optional caption"
+#               - src: "https://youtu.be/VIDEO_ID"     # YouTube link
+#               - src: "/media/clip.mp4"               # video file (keep under ~50 MB)
+#
+#  To add an entry, copy an `- what:` block. To add a new group, copy a
+#  whole `- heading:` block. For photos/videos about the tab in general
+#  (not one entry), use the `media:` list at the top of the tab's page file.
+# =====================================================================
+
+- heading: "Positions of responsibility"
+  items:
+    - what: "Head, Mathematics Club, IIT Madras"
+      detail: "Led a team of 70+, including 14 coordinators. Founded the Srinivasa Ramanujan Mathematics Competition, India’s first olympiad-style contest for engineering undergraduates, with 600+ registrations from 100+ universities in its first year. Ran the club’s Summer School (~1000 registrations from across India), oversaw two projects (*SnipperClips*, on building a target shape from two initial shapes with a fixed set of moves, and *Dynamix*, on modelling dynamical systems with category theory), and launched the club’s first website."
+      when: "2023 – 25"
+      media: []
+    - what: "Coordinator, Mathematics Club, IIT Madras"
+      detail: "Ran the Combino-Geo Grand Prix (200+ registrations, five rounds). Taught two sessions on optimization. Led a project on the travelling salesman problem that produced a heuristic a million times faster than simulated annealing. Made an animated Manim video explaining a mathematical idea visually."
+      when: ""
+      media: []
+    - what: "Deputy Coordinator, Mathematics Club, IIT Madras"
+      detail: "Organized IIT Madras’s first Integration Bee (150+ students). Used Monte Carlo simulation of a 2D particle model to estimate the temperature dependence in the Arrhenius equation, presented at the CFI Open House 2023."
+      when: ""
+      media: []
+    - what: "Coordinator, AI Club, IIT Madras"
+      detail: "Taught an online Summer School session introducing deep learning to 1000+ students across India, and sessions on optimization, quantum ML and neural networks from scratch to 200+ students. Ran a workshop on MLOps with Docker. Designed and ran the Shaastra Techathon AI/ML Challenge 2024 (350+ participants from 20+ colleges): problem statement, dataset and evaluation metric."
+      when: "2024 – 25"
+      media: []
+
+- heading: "Mentoring & outreach"
+  items:
+    - what: "Saathi Mentor, IIT Madras"
+      detail: "Mentored four first-year students through their first year, helping them settle into college life, courses and extracurriculars."
+      when: "Aug 2023 – Apr 2024"
+      media: []
+    - what: "Teaching Assistant, SATHEE"
+      detail: "Recorded videos explaining Class 12 NCERT chapters and a JEE Main “Solve with Me” mock-test walkthrough, gave an interview on JEE preparation strategy (both on YouTube), and held online doubt sessions."
+      when: "Apr – Oct 2023"
+      media: []
+    - what: "Mentor, Avanti Fellows"
+      detail: "Mentored two JEE aspirants from Jawahar Navodaya Vidyalayas in Puducherry and Barwani through online doubt sessions and regular visits to Puducherry."
+      when: "Nov 2022 – Oct 2023"
+      media: []
+
+- heading: "Writing & media"
+  items:
+    - what: "Writing Club Contingent, IIT Madras"
+      detail: "Selected for the institute’s Writing Club contingent; competed in creative writing at JIPMER’s Spandan 2023."
+      when: "Feb 2023 – Feb 2024"
+      media: []
+    - what: "Assistant Content Creator, IITM TV"
+      detail: "Selected for the Writing and Direction vertical on the strength of a script for a 10-minute short film on sacrifice."
+      when: "Mar – Jul 2023"
+      media: []
+
+- heading: "Reviewing"
+  items:
+    - what: "Reviewer, NeurIPS"
+      detail: ""
+      when: "2026"
+      media: []

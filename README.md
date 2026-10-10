@@ -2,7 +2,7 @@
 
 This is my personal academic website, built with plain Jekyll. GitHub Pages rebuilds it on every push to `master`, and the live site is at <https://atreyavedantam.github.io>.
 
-Each tab in the top menu is its own page: **About, News, Publications, Research, Teaching, Service, Extracurriculars**.
+Each tab in the top menu is its own page: **About, News, Publications, Teaching, Experiences, Extracurriculars**.
 
 ## Where to edit what
 
@@ -11,9 +11,8 @@ Each tab in the top menu is its own page: **About, News, Publications, Research,
 | **About** (home) | `index.md` | Honors: `_data/honors.yml` |
 | **News** | `news.md` | `_data/news.yml` |
 | **Publications** | `publications.md` | `_data/publications.yml` |
-| **Research** | `research.md` | `_data/research.yml` |
 | **Teaching** | `teaching.md` | `_data/teaching.yml` |
-| **Service** | `service.md` | `_data/service.yml` |
+| **Experiences** | `experiences.md` | `_data/experiences.yml` |
 | **Extracurriculars** | `extracurriculars.md` | `_data/extracurriculars.yml` |
 
 | Other things | Where |

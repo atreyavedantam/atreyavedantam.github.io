@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Research"
-permalink: /research/
-section: research
+title: "Experiences"
+permalink: /experiences/
+section: experiences
 # Photos & videos for this tab, shown at the bottom of the page.
 # Upload files into the /media/ folder, then list them here, e.g.
 #   media:
@@ -11,13 +11,13 @@ section: research
 #     - src: "https://www.youtube.com/watch?v=VIDEO_ID"   # YouTube link
 #     - src: "/media/clip.mp4"                            # video file (keep under ~50 MB)
 # To attach a photo/video to ONE entry instead, add `media:` to that entry
-# in _data/research.yml.
+# in _data/experiences.yml.
 media: []
 ---
 
 <!--
-  RESEARCH TAB.
+  EXPERIENCES TAB.
   Anything you write below this comment (plain Markdown) appears at the top
-  of the tab, above your research projects. The entries themselves live in _data/research.yml.
+  of the tab, above your experiences. The entries themselves live in _data/experiences.yml.
   Leave it empty if you don't need an intro.
 -->

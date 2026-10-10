@@ -61,9 +61,8 @@
         {% when "about" %}{% if site.data.honors.size > 0 %}<div class="section">{% include groups.html data=site.data.honors %}</div>{% endif %}
         {% when "news" %}{% include news.html %}
         {% when "publications" %}{% include publications.html %}
-        {% when "research" %}{% include research.html %}
         {% when "teaching" %}{% include groups.html data=site.data.teaching %}
-        {% when "service" %}{% include groups.html data=site.data.service %}
+        {% when "experiences" %}{% include groups.html data=site.data.experiences %}
         {% when "extracurriculars" %}{% include groups.html data=site.data.extracurriculars %}
       {% endcase %}
     </section>

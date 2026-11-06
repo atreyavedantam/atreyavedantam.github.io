@@ -31,7 +31,7 @@
     arxiv: "https://arxiv.org/abs/2603.02031"
     pdf: "https://arxiv.org/pdf/2603.02031"
 
-- title: "Grokking in Linear Models for Logistic Regression"
+- title: "On the Dynamics of Delayed Generalization in Linear Models"
   authors: ["Atreya Vedantam*", "Nataraj Das*", "Chandrashekar Lakshminarayanan"]
   venue: "arXiv preprint arXiv:2602.08302, 2026"
   tag: "Preprint"

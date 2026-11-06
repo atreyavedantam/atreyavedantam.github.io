@@ -20,7 +20,7 @@ photo: "/images/profile.jpg"
 email: "ee22b004@smail.iitm.ac.in"
 cv: "/files/cv.pdf"                 # replace files/cv.pdf with your latest CV
 scholar: "https://scholar.google.com/citations?user=JCla9gLlX-MC&hl=en"
-github: "atreyavedantam"
+github: ""
 linkedin: "atreya-vedantam-249890276"
 arxiv: ""                           # e.g. "https://arxiv.org/a/vedantam_a_1"
 twitter: ""                         # handle without the @

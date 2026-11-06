@@ -14,6 +14,9 @@
 #  older ones are tucked behind a "Show older news" toggle.
 # =====================================================================
 
+- date: "Sep 2026"
+  text: "New preprint: [On the Dynamics of Delayed Generalization in Linear Models](https://arxiv.org/abs/2602.08302)."
+
 - date: "Jun 2026"
   text: "Presented [Characterization of Blind Code Rate Recovery in Linear Block Codes](https://arxiv.org/abs/2603.02031) at **IEEE ISIT 2026** (Guangzhou, China)."
 
@@ -22,9 +25,6 @@
 
 - date: "Mar 2026"
   text: "[Characterization of Blind Code Rate Recovery in Linear Block Codes](https://arxiv.org/abs/2603.02031) is on arXiv and was accepted at **IEEE ISIT 2026** (Guangzhou, China)."
-
-- date: "Feb 2026"
-  text: "New preprint: [Grokking in Linear Models for Logistic Regression](https://arxiv.org/abs/2602.08302) — grokking without depth or representation learning."
 
 - date: "May 2025"
   text: "Summer intern in quantitative research at **Dynamic Technology Lab**, Singapore (May – July 2025)."

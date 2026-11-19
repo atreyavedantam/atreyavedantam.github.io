@@ -1,0 +1,63 @@
+# =====================================================================
+#  RESEARCH TOPICS — the headings on the Publications tab, in order.
+#  Each topic gets a filter button at the top of the tab.
+#
+#  id:      short name, lowercase-with-dashes. A paper in
+#           _data/publications.yml joins this topic by setting the same
+#           value in its `topic:` field.
+#  title:   heading shown on the page and on the filter button
+#  summary: a short description (Markdown allowed)
+#  status:  optional line shown when the topic has no papers yet,
+#           e.g. "Manuscript in preparation."
+# =====================================================================
+
+- id: "feature-learning"
+  title: "Feature learning and optimization"
+  summary: >-
+    With [Prof. Vatsal Sharan](https://vatsalsharan.github.io/) at USC, I am trying to understand how the
+    choice of optimizer affects the features a network learns. The Neural Feature Ansatz (NFA) suggests
+    that each layer's weight Gram matrix is proportional to the average gradient outer product (AGOP)
+    with respect to that layer's input. We were surprised to find that this relationship seems to break
+    down for networks trained with spectrum-aware optimizers such as Muon: the learned features still
+    appear to align with the dominant eigenspaces of the AGOP, but not with its spectrum. We are
+    exploring a spectrum-aware version of the NFA, in which subspace alignment rather than spectral
+    matching describes feature learning, and testing it on deep MLPs and a GPT-2-style transformer.
+  status: "Manuscript in preparation."
+
+- id: "memory-constrained"
+  title: "Memory-constrained learning"
+  summary: >-
+    In my master's thesis, with Vatsal Sharan, Kabir Verchand and Ankit Pensia, we ask how many samples a
+    streaming algorithm needs to solve high-dimensional testing problems when it cannot store all of its
+    data. By bounding how much information each sample can provide, we obtain memory-sample tradeoffs
+    which, to our knowledge, give the first superlinear memory lower bounds for several well-studied
+    problems in high-dimensional statistics.
+
+- id: "privacy"
+  title: "Privacy"
+  summary: >-
+    With [Prof. Krishna Pillutla](https://krishnap25.github.io/) at IIT Madras, I am studying the trade-off
+    between privacy and utility when fine-tuning a model. We try to characterize the best utility that can
+    be achieved, for any non-negative population risk, under a bound on membership-inference advantage,
+    and we describe an algorithm that releases a Pareto-optimal model in the Neural Tangent Kernel regime.
+    This question grew out of earlier work on how vulnerable individual training points are to
+    membership inference attacks.
+  status: "Work in progress."
+
+- id: "delayed-generalization"
+  title: "Delayed generalization"
+  summary: >-
+    With Prof. Chandrashekar Lakshminarayanan, I looked at delayed generalization (grokking) in linear
+    models trained with gradient descent. Our non-asymptotic results suggest that training passes through
+    three phases: an early population-dominated phase, a phase of support-vector-dominated unlearning,
+    and finally generalization. The last two phases happen late in training, when the implicit bias of
+    gradient descent is driven by the support vectors.
+
+- id: "broader"
+  title: "Broader background"
+  summary: >-
+    Before focusing on machine learning, I was fortunate to explore a few neighbouring areas. In my
+    bachelor's thesis with [Prof. Krishna Jagannathan](https://www.ee.iitm.ac.in/~krishnaj/), I studied
+    entanglement scheduling in quantum networks, building a tractable model that accounts for distillation
+    and using it to derive scheduling policies. With [Prof. Radha Krishna Ganti](https://www.rkganti.in/),
+    I worked on the limits of rank-based blind code-rate recovery at low signal-to-noise ratios.

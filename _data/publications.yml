@@ -18,25 +18,42 @@
 #                 caption: "Optional caption"
 #               - src: "https://youtu.be/VIDEO_ID" # YouTube link
 #               - src: "/media/clip.mp4"           # video file (keep under ~50 MB)
-#  section:  "papers" (published / accepted) or "preprints"
-#            (preprints, under review, in preparation).
+#  topic:    which research topic the paper is listed under: the `id` of
+#            a topic in _data/research.yml (e.g. "privacy").
 # =====================================================================
 
 - title: "Characterization of Blind Code Rate Recovery in Linear Block Codes"
   authors: ["Atreya Vedantam", "Radha Krishna Ganti"]
   venue: "IEEE International Symposium on Information Theory (ISIT), 2026"
   tag: "ISIT 2026"
-  section: "papers"
+  note: "Presented in person"
+  topic: "broader"
   links:
     arxiv: "https://arxiv.org/abs/2603.02031"
     pdf: "https://arxiv.org/pdf/2603.02031"
 
+- title: "Memory-Sample Tradeoffs in High-Dimensional Statistics"
+  authors: ["Ankit Pensia", "D. Gupta", "Kabir A. Verchand", "Vatsal Sharan", "Atreya Vedantam"]
+  venue: "Under review at STOC 2027"
+  tag: "Under review"
+  note: "Authors in randomized order"
+  topic: "memory-constrained"
+  links: {}
+
 - title: "On the Dynamics of Delayed Generalization in Linear Models"
   authors: ["Atreya Vedantam*", "Nataraj Das*", "Chandrashekar Lakshminarayanan"]
-  venue: "arXiv preprint arXiv:2602.08302, 2026"
+  venue: "arXiv preprint arXiv:2602.08302, 2026. Under review at AISTATS 2027"
   tag: "Preprint"
   note: "* Equal contribution"
-  section: "preprints"
+  topic: "delayed-generalization"
   links:
     arxiv: "https://arxiv.org/abs/2602.08302"
     pdf: "https://arxiv.org/pdf/2602.08302"
+
+- title: "Optimizing Entanglement Distillation and Swap Decisions in Homogeneous Quantum Repeater Chains"
+  authors: ["Atreya Vedantam", "Krishna Jagannathan"]
+  venue: "Under review at SIGMETRICS 2027"
+  tag: "Under review"
+  note: "Bachelor's thesis"
+  topic: "broader"
+  links: {}

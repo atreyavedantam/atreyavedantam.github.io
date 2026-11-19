@@ -1,55 +1,99 @@
 {%- comment -%}
-  Publications. Content lives in _data/publications.yml.
-  Papers are split into two groups by their `section:` field.
+  Publications, grouped by research topic.
+  Topics (headings, descriptions, order) live in _data/research.yml;
+  papers live in _data/publications.yml and join a topic via `topic:`.
+  The filter buttons need JavaScript; without it every topic is shown.
 {%- endcomment -%}
 <p class="section__note">
-    See also my <a href="{{ site.scholar }}">Google Scholar</a> profile.
-  </p>
+  My research is organised around a few topics, most of which have one piece of work so far.
+  See also my <a href="{{ site.scholar }}">Google Scholar</a> profile.
+</p>
 
-  {%- assign groups = "papers|Papers,preprints|Preprints" | split: "," -%}
-  {% for g in groups %}
-    {%- assign key = g | split: "|" | first -%}
-    {%- assign label = g | split: "|" | last -%}
-    {%- assign pubs = site.data.publications | where: "section", key -%}
-    {% if pubs.size > 0 %}
-    <h3 class="subhead">{{ label }}</h3>
-    <ol class="pubs">
-      {% for p in pubs %}
-      <li class="pub">
-        <div class="pub__title">{{ p.title }}</div>
-        <div class="pub__authors">
-          {%- for a in p.authors -%}
-            {%- assign clean = a | remove: "*" -%}
-            {%- if clean == site.name -%}<span class="me">{{ a }}</span>{%- else -%}{{ a }}{%- endif -%}
-            {%- unless forloop.last -%}{%- if forloop.rindex == 2 -%}{% if p.authors.size > 2 %},{% endif %} and {% else %}, {% endif -%}{%- endunless -%}
-          {%- endfor -%}
-        </div>
-        <div class="pub__venue">
-          {% if p.tag and p.tag != "" %}<span class="tag">{{ p.tag }}</span>{% endif %}
-          <em>{{ p.venue }}</em>
-          {% if p.note and p.note != "" %}<span class="pub__note">· {{ p.note }}</span>{% endif %}
-        </div>
-        {% if p.links and p.links.size > 0 %}
-        <div class="pub__links">
-          {% for l in p.links %}
-            {%- assign href = l[1] -%}
-            {%- if href and href != "" -%}
-              {%- assign first = href | slice: 0 -%}
-              {%- if first == "/" -%}{%- assign href = href | relative_url -%}{%- endif -%}
-              {%- case l[0] -%}
-                {%- when "arxiv" -%}{%- assign label = "arXiv" -%}
-                {%- when "pdf" -%}{%- assign label = "PDF" -%}
-                {%- when "bibtex" -%}{%- assign label = "BibTeX" -%}
-                {%- else -%}{%- assign label = l[0] | capitalize -%}
-              {%- endcase -%}
-              <a href="{{ href }}">{{ label }}</a>
-            {%- endif -%}
-          {% endfor %}
-        </div>
-        {% endif %}
-        {% include media.html items=p.media %}
-      </li>
-      {% endfor %}
-    </ol>
-    {% endif %}
-  {% endfor %}
+<div class="topic-filter" role="group" aria-label="Filter by topic" hidden>
+  <button type="button" class="topic-filter__btn is-active" data-topic="all" aria-pressed="true">All</button>
+  {%- for t in site.data.research %}
+  <button type="button" class="topic-filter__btn" data-topic="{{ t.id }}" aria-pressed="false">{{ t.title }}</button>
+  {%- endfor %}
+</div>
+
+{% for t in site.data.research %}
+{%- assign pubs = site.data.publications | where: "topic", t.id -%}
+<section class="topic" id="topic-{{ t.id }}" data-topic="{{ t.id }}">
+  <h2 class="topic__title">{{ t.title }}</h2>
+  {% if t.summary and t.summary != "" %}<div class="topic__summary">{{ t.summary | markdownify }}</div>{% endif %}
+  {% if pubs.size > 0 %}
+  <ol class="pubs">
+    {% for p in pubs %}
+    <li class="pub" id="pub-{{ p.title | slugify }}">
+      <div class="pub__title">{{ p.title }}</div>
+      <div class="pub__authors">
+        {%- for a in p.authors -%}
+          {%- assign clean = a | remove: "*" -%}
+          {%- if clean == site.name -%}<span class="me">{{ a }}</span>{%- else -%}{{ a }}{%- endif -%}
+          {%- unless forloop.last -%}{%- if forloop.rindex == 2 -%}{% if p.authors.size > 2 %},{% endif %} and {% else %}, {% endif -%}{%- endunless -%}
+        {%- endfor -%}
+      </div>
+      <div class="pub__venue">
+        {% if p.tag and p.tag != "" %}<span class="tag">{{ p.tag }}</span>{% endif %}
+        <em>{{ p.venue }}</em>
+        {% if p.note and p.note != "" %}<span class="pub__note">· {{ p.note }}</span>{% endif %}
+      </div>
+      {% if p.links and p.links.size > 0 %}
+      <div class="pub__links">
+        {% for l in p.links %}
+          {%- assign href = l[1] -%}
+          {%- if href and href != "" -%}
+            {%- assign first = href | slice: 0 -%}
+            {%- if first == "/" -%}{%- assign href = href | relative_url -%}{%- endif -%}
+            {%- case l[0] -%}
+              {%- when "arxiv" -%}{%- assign label = "arXiv" -%}
+              {%- when "pdf" -%}{%- assign label = "PDF" -%}
+              {%- when "bibtex" -%}{%- assign label = "BibTeX" -%}
+              {%- else -%}{%- assign label = l[0] | capitalize -%}
+            {%- endcase -%}
+            <a href="{{ href }}">{{ label }}</a>
+          {%- endif -%}
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% include media.html items=p.media %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% elsif t.status and t.status != "" %}
+  <p class="topic__status">{{ t.status }}</p>
+  {% endif %}
+</section>
+{% endfor %}
+
+<script>
+  /* Topic filter: show one topic, or all. Remembers the choice in the URL (#topic-…). */
+  (function () {
+    var bar = document.querySelector('.topic-filter');
+    if (!bar) return;
+    var btns = bar.querySelectorAll('.topic-filter__btn');
+    var topics = document.querySelectorAll('.topic');
+    function show(id, updateUrl) {
+      var found = id === 'all';
+      topics.forEach(function (s) { if (s.dataset.topic === id) found = true; });
+      if (!found) id = 'all';
+      topics.forEach(function (s) { s.hidden = id !== 'all' && s.dataset.topic !== id; });
+      btns.forEach(function (b) {
+        var on = b.dataset.topic === id;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      if (updateUrl && history.replaceState) {
+        history.replaceState(null, '', id === 'all' ? location.pathname : '#topic-' + id);
+      }
+    }
+    bar.hidden = false;
+    btns.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.topic, true); }); });
+    function fromHash() {
+      var h = location.hash.slice(1);
+      if (h.indexOf('topic-') === 0) show(h.slice(6), false); else show('all', false);
+    }
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+  })();
+</script>

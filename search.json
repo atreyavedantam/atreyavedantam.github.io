@@ -1,0 +1,56 @@
+---
+layout: null
+permalink: /search.json
+sitemap: false
+---
+{%- comment -%}
+  Index for the Ctrl+K search box (assets/js/search.js). Built automatically
+  from every page and _data/ file; you never need to edit this.
+{%- endcomment -%}
+[
+{%- assign first = true -%}
+{%- for n in site.nav -%}
+  {%- assign p = site.pages | where: "url", n.url | first -%}
+  {%- if p -%}
+  {%- unless first %},{% endunless %}{% assign first = false -%}
+  {"kind":"Page","title":{{ n.title | jsonify }},"url":{{ p.url | relative_url | jsonify }},"text":{{ p.content | markdownify | strip_html | strip_newlines | truncate: 2000 | jsonify }}}
+  {%- endif -%}
+{%- endfor -%}
+{%- for t in site.data.research -%}
+  ,{"kind":"Topic","title":{{ t.title | jsonify }},"url":{{ "/publications/#topic-" | append: t.id | relative_url | jsonify }},"text":{{ t.summary | markdownify | strip_html | strip_newlines | jsonify }}}
+{%- endfor -%}
+{%- for p in site.data.publications -%}
+  {%- assign slug = p.title | slugify -%}
+  ,{"kind":"Publication","title":{{ p.title | jsonify }},"url":{{ "/publications/#pub-" | append: slug | relative_url | jsonify }},"text":{{ p.authors | join: ", " | remove: "*" | append: " · " | append: p.venue | jsonify }}}
+{%- endfor -%}
+{%- for n in site.data.news -%}
+  ,{"kind":"News","title":{{ n.text | markdownify | strip_html | strip_newlines | truncate: 110 | jsonify }},"url":{{ "/news/" | relative_url | jsonify }},"text":{{ n.date | append: " · " | append: n.text | markdownify | strip_html | strip_newlines | jsonify }}}
+{%- endfor -%}
+{%- assign groupsets = "Honors|/|honors,Teaching|/teaching/|teaching,Experience|/experience/|experience" | split: "," -%}
+{%- for gs in groupsets -%}
+  {%- assign gparts = gs | split: "|" -%}
+  {%- assign gkey = gparts[2] -%}
+  {%- assign gdata = site.data[gkey] -%}
+  {%- for g in gdata -%}{%- for it in g.items -%}
+  ,{"kind":{{ gparts[0] | jsonify }},"title":{{ it.what | markdownify | strip_html | strip_newlines | jsonify }},"url":{{ gparts[1] | relative_url | jsonify }},"text":{{ g.heading | append: " · " | append: it.detail | append: " " | append: it.when | markdownify | strip_html | strip_newlines | jsonify }}}
+  {%- for sb in it.sub -%}
+  ,{"kind":{{ gparts[0] | jsonify }},"title":{{ sb.what | markdownify | strip_html | strip_newlines | jsonify }},"url":{{ gparts[1] | relative_url | jsonify }},"text":{{ sb.detail | append: " " | append: sb.when | markdownify | strip_html | strip_newlines | jsonify }}}
+  {%- endfor -%}
+  {%- endfor -%}{%- endfor -%}
+{%- endfor -%}
+{%- for post in site.posts -%}
+  ,{"kind":"Blog","title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"text":{{ post.description | append: " " | append: post.content | strip_html | strip_newlines | truncate: 2000 | jsonify }}}
+{%- endfor -%}
+{%- if site.cv and site.cv != "" -%}
+  ,{"kind":"Link","title":"CV (PDF)","url":{{ site.cv | relative_url | jsonify }},"text":"curriculum vitae resume"}
+{%- endif -%}
+{%- if site.scholar and site.scholar != "" -%}
+  ,{"kind":"Link","title":"Google Scholar","url":{{ site.scholar | jsonify }},"text":"citations papers"}
+{%- endif -%}
+{%- if site.email and site.email != "" -%}
+  ,{"kind":"Link","title":"Email","url":{{ "mailto:" | append: site.email | jsonify }},"text":{{ site.email | append: " contact" | jsonify }}}
+{%- endif -%}
+{%- if site.linkedin and site.linkedin != "" -%}
+  ,{"kind":"Link","title":"LinkedIn","url":{{ "https://www.linkedin.com/in/" | append: site.linkedin | jsonify }},"text":"profile"}
+{%- endif -%}
+]

@@ -27,7 +27,7 @@
   venue: "IEEE International Symposium on Information Theory (ISIT), 2026"
   tag: "ISIT 2026"
   note: "Presented in person"
-  topic: "broader"
+  topic: "coding"
   links:
     arxiv: "https://arxiv.org/abs/2603.02031"
     pdf: "https://arxiv.org/pdf/2603.02031"
@@ -55,5 +55,5 @@
   venue: "Under review at SIGMETRICS 2027"
   tag: "Under review"
   note: "Bachelor's thesis"
-  topic: "broader"
+  topic: "scheduling"
   links: {}

@@ -31,6 +31,20 @@
     return loading;
   }
 
+  function svg(d) { return '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; }
+  var ICONS = {
+    Page: svg('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>'),
+    Topic: svg('<path d="M4 6h16M4 12h10M4 18h6"/>'),
+    Publication: svg('<path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 8h6"/>'),
+    News: svg('<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>'),
+    Honors: svg('<circle cx="12" cy="9" r="5"/><path d="m8.5 13-1.5 8 5-3 5 3-1.5-8"/>'),
+    Teaching: svg('<path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>'),
+    Experience: svg('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>'),
+    Blog: svg('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>'),
+    Link: svg('<path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>')
+  };
+  var LABELS = { Page: 'Pages', Topic: 'Research topics', Publication: 'Publications', News: 'News', Honors: 'Honors', Teaching: 'Teaching', Experience: 'Experience', Blog: 'Blog posts', Link: 'Links' };
+
   function score(it, terms) {
     var s = 0;
     for (var i = 0; i < terms.length; i++) {
@@ -80,14 +94,28 @@
     }
     active = 0;
     empty.hidden = results.length > 0 || !terms.length;
-    list.innerHTML = results.map(function (it, i) {
-      return '<li role="option" id="sr-' + i + '" aria-selected="' + (i === 0) + '" class="search__item' + (i === 0 ? ' is-active' : '') + '">' +
-        '<a href="' + escapeHtml(it.url) + '">' +
-        '<span class="search__kind">' + escapeHtml(it.kind) + '</span>' +
-        '<span class="search__title">' + mark(it.title || '', terms) + '</span>' +
-        (terms.length && it.text ? '<span class="search__snippet">' + mark(snippet(it.text, terms), terms) + '</span>' : '') +
-        '</a></li>';
-    }).join('');
+    /* Group by kind, keeping the best-scoring group first. */
+    var order = [], groups = {};
+    results.forEach(function (it) {
+      if (!groups[it.kind]) { groups[it.kind] = []; order.push(it.kind); }
+      groups[it.kind].push(it);
+    });
+    results = [];
+    var html = '';
+    order.forEach(function (kind) {
+      html += '<li class="search__group" role="presentation">' + escapeHtml(LABELS[kind] || kind) + '</li>';
+      groups[kind].forEach(function (it) {
+        var i = results.length;
+        results.push(it);
+        html += '<li role="option" id="sr-' + i + '" aria-selected="' + (i === 0) + '" class="search__item' + (i === 0 ? ' is-active' : '') + '">' +
+          '<a href="' + escapeHtml(it.url) + '">' +
+          '<span class="search__icon" aria-hidden="true">' + (ICONS[it.kind] || ICONS.Page) + '</span>' +
+          '<span class="search__body"><span class="search__title">' + mark(it.title || '', terms) + '</span>' +
+          (terms.length && it.text ? '<span class="search__snippet">' + mark(snippet(it.text, terms), terms) + '</span>' : '') +
+          '</span><span class="search__enter" aria-hidden="true">↵</span></a></li>';
+      });
+    });
+    list.innerHTML = html;
     input.setAttribute('aria-activedescendant', results.length ? 'sr-0' : '');
   }
 
@@ -107,6 +135,7 @@
     if (!dialog.hidden) return;
     lastFocus = document.activeElement;
     dialog.hidden = false;
+    void dialog.offsetWidth; dialog.classList.add('is-open');
     document.documentElement.classList.add('search-open');
     input.value = '';
     input.focus();
@@ -115,6 +144,7 @@
   function close() {
     if (dialog.hidden) return;
     dialog.hidden = true;
+    dialog.classList.remove('is-open');
     document.documentElement.classList.remove('search-open');
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
@@ -135,7 +165,7 @@
   list.addEventListener('mousemove', function (e) {
     var li = e.target.closest('.search__item');
     if (!li) return;
-    var idx = Array.prototype.indexOf.call(list.children, li);
+    var idx = Array.prototype.indexOf.call(list.querySelectorAll('.search__item'), li);
     if (idx !== active) setActive(idx);
   });
   dialog.addEventListener('click', function (e) { if (e.target === dialog) close(); });

@@ -13,18 +13,18 @@ sitemap: false
   {%- assign p = site.pages | where: "url", n.url | first -%}
   {%- if p -%}
   {%- unless first %},{% endunless %}{% assign first = false -%}
-  {"kind":"Page","title":{{ n.title | jsonify }},"url":{{ p.url | relative_url | jsonify }},"text":{{ p.content | markdownify | strip_html | strip_newlines | truncate: 2000 | jsonify }}}
+  {"kind":"Page","title":{{ n.title | jsonify }},"url":{{ p.url | relative_url | jsonify }},"text":{{ p.content | markdownify | strip_html | normalize_whitespace | truncate: 2000 | jsonify }}}
   {%- endif -%}
 {%- endfor -%}
 {%- for t in site.data.research -%}
-  ,{"kind":"Topic","title":{{ t.title | jsonify }},"url":{{ "/publications/#topic-" | append: t.id | relative_url | jsonify }},"text":{{ t.summary | markdownify | strip_html | strip_newlines | jsonify }}}
+  ,{"kind":"Topic","title":{{ t.title | jsonify }},"url":{{ "/publications/#topic-" | append: t.id | relative_url | jsonify }},"text":{{ t.summary | markdownify | strip_html | normalize_whitespace | jsonify }}}
 {%- endfor -%}
 {%- for p in site.data.publications -%}
   {%- assign slug = p.title | slugify -%}
   ,{"kind":"Publication","title":{{ p.title | jsonify }},"url":{{ "/publications/#pub-" | append: slug | relative_url | jsonify }},"text":{{ p.authors | join: ", " | remove: "*" | append: " · " | append: p.venue | jsonify }}}
 {%- endfor -%}
 {%- for n in site.data.news -%}
-  ,{"kind":"News","title":{{ n.text | markdownify | strip_html | strip_newlines | truncate: 110 | jsonify }},"url":{{ "/news/" | relative_url | jsonify }},"text":{{ n.date | append: " · " | append: n.text | markdownify | strip_html | strip_newlines | jsonify }}}
+  ,{"kind":"News","title":{{ n.text | markdownify | strip_html | normalize_whitespace | truncate: 110 | jsonify }},"url":{{ "/news/" | relative_url | jsonify }},"text":{{ n.date | append: " · " | append: n.text | markdownify | strip_html | normalize_whitespace | jsonify }}}
 {%- endfor -%}
 {%- assign groupsets = "Honors|/|honors,Teaching|/teaching/|teaching,Experience|/experience/|experience" | split: "," -%}
 {%- for gs in groupsets -%}
@@ -32,14 +32,14 @@ sitemap: false
   {%- assign gkey = gparts[2] -%}
   {%- assign gdata = site.data[gkey] -%}
   {%- for g in gdata -%}{%- for it in g.items -%}
-  ,{"kind":{{ gparts[0] | jsonify }},"title":{{ it.what | markdownify | strip_html | strip_newlines | jsonify }},"url":{{ gparts[1] | relative_url | jsonify }},"text":{{ g.heading | append: " · " | append: it.detail | append: " " | append: it.when | markdownify | strip_html | strip_newlines | jsonify }}}
+  ,{"kind":{{ gparts[0] | jsonify }},"title":{{ it.what | markdownify | strip_html | normalize_whitespace | jsonify }},"url":{{ gparts[1] | relative_url | jsonify }},"text":{{ g.heading | append: " · " | append: it.detail | append: " " | append: it.when | markdownify | strip_html | normalize_whitespace | jsonify }}}
   {%- for sb in it.sub -%}
-  ,{"kind":{{ gparts[0] | jsonify }},"title":{{ sb.what | markdownify | strip_html | strip_newlines | jsonify }},"url":{{ gparts[1] | relative_url | jsonify }},"text":{{ sb.detail | append: " " | append: sb.when | markdownify | strip_html | strip_newlines | jsonify }}}
+  ,{"kind":{{ gparts[0] | jsonify }},"title":{{ sb.what | markdownify | strip_html | normalize_whitespace | jsonify }},"url":{{ gparts[1] | relative_url | jsonify }},"text":{{ sb.detail | append: " " | append: sb.when | markdownify | strip_html | normalize_whitespace | jsonify }}}
   {%- endfor -%}
   {%- endfor -%}{%- endfor -%}
 {%- endfor -%}
 {%- for post in site.posts -%}
-  ,{"kind":"Blog","title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"text":{{ post.description | append: " " | append: post.content | strip_html | strip_newlines | truncate: 2000 | jsonify }}}
+  ,{"kind":"Blog","title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"text":{{ post.description | append: " " | append: post.content | strip_html | normalize_whitespace | truncate: 2000 | jsonify }}}
 {%- endfor -%}
 {%- if site.cv and site.cv != "" -%}
   ,{"kind":"Link","title":"CV (PDF)","url":{{ site.cv | relative_url | jsonify }},"text":"curriculum vitae resume"}

@@ -5,7 +5,12 @@
 <header class="hero">
   <div class="hero__text">
     <h1 class="hero__name">{{ site.name }}</h1>
-    {% if site.tagline %}<p class="hero__tagline">{{ site.tagline }}</p>{% endif %}
+    {% if site.tagline %}
+    <ul class="hero__tagline" aria-label="Research interests">
+      {%- assign interests = site.tagline | split: "·" -%}
+      {%- for i in interests %}<li>{{ i | strip }}</li>{% endfor -%}
+    </ul>
+    {% endif %}
     {% if site.affiliation %}
     <p class="hero__affil">
       {% if site.affiliation_url %}<a href="{{ site.affiliation_url }}">{{ site.affiliation }}</a>{% else %}{{ site.affiliation }}{% endif %}
